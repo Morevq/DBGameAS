@@ -64,4 +64,10 @@ public class DBManager {
 		return dbFile.exists();
 	}
 
+	public void setDb(SQLiteDatabase db) {
+		this.db = db;
+	}
+	public void clearTable(){
+		db.execSQL("DELETE FROM RESULTS;");
+	}
 }

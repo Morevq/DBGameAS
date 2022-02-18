@@ -48,8 +48,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:onClick="showHoF"
-        android:textSize="30dp" 
-        android:text="Hall of Fame" />
+        android:text="Hall of Fame"
+        android:textSize="30dp" />
     <Button
         android:id="@+id/stat"
         android:layout_width="wrap_content"
@@ -71,5 +71,18 @@
         android:onClick="play"
         android:scaleType="fitCenter"
         android:src="@drawable/green" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/hallOfFame"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="-42dp"
+        android:layout_toStartOf="@+id/hallOfFame"
+        android:layout_toLeftOf="@+id/hallOfFame"
+        android:onClick="buttonDelete"
+        android:text="Button" />
 
 </RelativeLayout>
