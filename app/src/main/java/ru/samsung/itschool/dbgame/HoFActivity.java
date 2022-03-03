@@ -2,7 +2,11 @@ package ru.samsung.itschool.dbgame;
 
 import java.util.ArrayList;
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,7 +20,7 @@ public class HoFActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ho_f);
 		dbManager = DBManager.getInstance(this);
-		ArrayList<Result> results = dbManager.getAllResults();
+		ArrayList<Result> results = dbManager.getAllResults(); //ааа, вот тут
 		String[] resultsString = new String[results.size()];
 		ListView listView = this.findViewById(R.id.listWiew);
 		listView.setAdapter(new ResultAdapter(this, results));

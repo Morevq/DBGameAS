@@ -50,15 +50,16 @@
         android:onClick="showHoF"
         android:text="Hall of Fame"
         android:textSize="30dp" />
+
     <Button
         android:id="@+id/stat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:onClick="stat"
-        android:textSize="30dp"
-        android:text="Stat" />
+        android:text="Stat"
+        android:textSize="30dp" />
 
     <ImageButton
         android:id="@+id/playButton"
