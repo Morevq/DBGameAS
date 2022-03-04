@@ -78,7 +78,7 @@ public class DBManager {
 
 		return data;
 	}
-	ArrayList<Result> getMaxUserResults(String username, int minScore) {
+	ArrayList<Result> getMaxUserResults() {
 		Cursor cursor = db.query("RESULTS",
 				new String[]{"USERNAME", "MAX(SCORE) AS MS"},
 				null, null, "USERNAME",
@@ -88,8 +88,25 @@ public class DBManager {
 
 		while (hasMoreData) {
 			String name = cursor.getString(cursor.getColumnIndex("USERNAME"));
-			int score = Integer.parseInt(cursor.getString(cursor
-					.getColumnIndex("SCORE")));
+			int score = cursor.getInt(1);
+			data.add(new Result(name, score));
+			hasMoreData = cursor.moveToNext();
+		}
+
+		return data;
+	}
+
+	ArrayList<Result> getMinUserResults() {
+		Cursor cursor = db.query("RESULTS",
+				new String[]{"USERNAME", "MIN(SCORE) AS MS"},
+				null, null, "USERNAME",
+				"MS < 500" , "MS DESC");
+		ArrayList<Result> data = new ArrayList<Result>();
+		boolean hasMoreData = cursor.moveToFirst();
+
+		while (hasMoreData) {
+			String name = cursor.getString(cursor.getColumnIndex("USERNAME"));
+			int score = cursor.getInt(1);
 			data.add(new Result(name, score));
 			hasMoreData = cursor.moveToNext();
 		}
