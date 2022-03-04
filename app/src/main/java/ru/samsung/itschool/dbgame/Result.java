@@ -16,4 +16,11 @@ public class Result {
                 ", score=" + score +
                 '}';
     }
+    public int getScore(){
+            return score;
+    }
+
+    public String getName(){
+        return name;
+    }
 }
